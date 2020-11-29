@@ -10,8 +10,9 @@ The implementation of paper ''Efficient Attention Network: Accelerate Attention 
 ## Introduction
 Efficient Attention Network (EAN) is a framework to improve the efficiency for the existing attention modules in computer vision. In EAN, we leverage the sharing mechanism [(Huang et al. 2020)](https://arxiv.org/pdf/1905.10671.pdf) to share the attention module within the backbone and search where to connect the shared attention module via reinforcement learning. 
 
-<img src="https://github.com/gbup-group/EAN-efficient-attention-network/blob/main/image/qpt.jpg" width = "630" height = "340" align=center />
-
+<p align="center">
+  <img src="https://github.com/gbup-group/EAN-efficient-attention-network/blob/main/image/qpt.jpg" width = "630" height = "340">
+</p>
 
 ## Requirement
 * Python 3.6 and [PyTorch 1.0](http://pytorch.org/)
