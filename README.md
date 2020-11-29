@@ -51,4 +51,7 @@ python train_imagenet/run_codes_train_from_scratch.py
 ```
 The checkpoints will be save in NAS_ckpts.
 
-
+## Citation
+If you find this paper helps in your research, please kindly cite 
+## Acknowledgement
+We would like to thank Taehoon Kim for his pytorch version of [ENAS fromework](https://github.com/carpedm20/ENAS-pytorch) and Xiang Li for his [attention network framework](https://github.com/implus/PytorchInsight). 
