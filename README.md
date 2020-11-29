@@ -8,7 +8,7 @@ By [Zhongzhan Huang](https://github.com/dedekinds), [Senwei Liang](https://leung
 The implementation of paper ''Efficient Attention Network: Accelerate Attention by Searching Where to Plug'' [[paper]](https://arxiv.org/). 
 
 ## Introduction
-Efficient Attention Network (EAN) is a framework to improve the efficiency for the existing attention modules in computer vision. In EAN, we leverage the sharing mechanism (Huang et al. 2020) to share the attention module within the backbone and search where to connect the shared attention module via reinforcement learning. 
+Efficient Attention Network (EAN) is a framework to improve the efficiency for the existing attention modules in computer vision. In EAN, we leverage the sharing mechanism [(Huang et al. 2020)](https://arxiv.org/pdf/1905.10671.pdf) to share the attention module within the backbone and search where to connect the shared attention module via reinforcement learning. 
 
 ## Requirement
 * Python 3.6 and [PyTorch 1.0](http://pytorch.org/)
@@ -27,6 +27,16 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_imagenet/train_imagenet_ensemble_subse
 ```
 
 ### Search an Optimal Connection Scheme
+Then, we search an optimal connection scheme from supernet. 
+For SGE,
+```
+python search_imagenet/run_code_search_sge.py
+```
+For DIA,
+```
+python search_imagenet/run_code_search_dia.py
+```
+
 
 ### Train a Network From Scratch
 Last, we train from scracth the attention network with the connection scheme searched in the second step. Note that to train the attention network with the different scheme, we need to edit train_imagenet/run_codes_train_from_scratch.py
@@ -34,3 +44,5 @@ Last, we train from scracth the attention network with the connection scheme sea
 python train_imagenet/run_codes_train_from_scratch.py
 ```
 The checkpoints will be save in NAS_ckpts.
+
+
