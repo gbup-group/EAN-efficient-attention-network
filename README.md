@@ -16,7 +16,7 @@ Efficient Attention Network (EAN) is a framework to improve the efficiency for t
 ## Implementation
 Our implementation is divided in three parts. First, we pre-train a supernet. Second, we use a policy-gradient-based method to search for an optimal connection scheme from the supernet. Last, we train from scratch a network searched by the second step. 
 
-#### Pretrain a Supernet
+### Pretrain a Supernet
 First, we pretrain a supernet and the checkpoint is saved in NAS_ckpts. For example, we train a SGE-supernet, 
 ```
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train_imagenet/train_imagenet_ensemble_subset.py -a forward_config_share_sge_resnet50 -data /home/jovyan/ILSVRC2012_Data --checkpoint NAS_ckpts/ensemble_sge_train_on_subset
@@ -26,9 +26,9 @@ or train a DIA-supernet,
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train_imagenet/train_imagenet_ensemble_subset.py -a forward_dia_fbresnet50 -data /home/jovyan/ILSVRC2012_Data --checkpoint NAS_ckpts/ensemble_dia_train_on_subset
 ```
 
-#### Search an Optimal Connection Scheme
+### Search an Optimal Connection Scheme
 
-#### Train a Network From Scratch
+### Train a Network From Scratch
 Last, we train from scracth the attention network with the connection scheme searched in the second step. Note that to train the attention network with the different scheme, we need to edit train_imagenet/run_codes_train_from_scratch.py
 ```
 python train_imagenet/run_codes_train_from_scratch.py
