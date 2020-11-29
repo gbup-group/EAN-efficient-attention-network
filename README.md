@@ -33,4 +33,4 @@ Last, we train from scracth the attention network with the connection scheme sea
 ```
 python train_imagenet/run_codes_train_from_scratch.py
 ```
-The checkpoints will be save in NAS_ckpts
+The checkpoints will be save in NAS_ckpts.
